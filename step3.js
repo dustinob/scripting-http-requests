@@ -1,6 +1,6 @@
 const https = require('https');
 
-function getAndPrintHTML (host, path) {
+function getAndPrintHTML (options) {
 
 
   var buffer = '';
@@ -8,7 +8,7 @@ function getAndPrintHTML (host, path) {
   // add my code here
 
   //http get response
-  https.get(requestOptions, function (response) {
+  https.get(options, function (response) {
 
     //set endoing to recieve data
     response.setEncoding('utf8');
@@ -31,4 +31,4 @@ var requestOptions = {
   path: '/http-examples/step2.html'
 };
 
-getAndPrintHTML(requestOptions.host, requestOptions.path);
+getAndPrintHTML(requestOptions);
